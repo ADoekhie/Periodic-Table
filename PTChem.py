@@ -2,7 +2,8 @@
 # Hope it may be useful to you
 
 import tkinter as tk
-import tkinter.font as ffont
+from tkinter import tix
+from tkinter import font
 
 my_elements = {
     "Hydrogen": {"name": "Hydrogen", "row": 0, "column": 0, "acro": "H", "color": "grey", "weight": 1.008},
@@ -62,21 +63,21 @@ my_elements = {
     "Cesium": {"name": "Cesium", "row": 5, "column": 0, "acro": "Cs", "color": "#F2A8F9", "weight": 132.906},
     "Barium": {"name": "Barium", "row": 5, "column": 1, "acro": "Ba", "color": "#FA91BB", "weight": 137.327},
     "Lanthanum": {"name": "Lanthanum", "row": 5, "column": 2, "acro": "La", "color": "#7BDFD4", "weight": 138.906},
-    "Cerium": {"name": "Cerium", "row": 8, "column": 2, "acro": "Ce", "color": "#7BDFD4", "weight": 140.116},
-    "Praseodymium": {"name": "Praseodymium", "row": 8, "column": 3, "acro": "Pr", "color": "#7BDFD4",
+    "Cerium": {"name": "Cerium", "row": 9, "column": 2, "acro": "Ce", "color": "#7BDFD4", "weight": 140.116},
+    "Praseodymium": {"name": "Praseodymium", "row": 9, "column": 3, "acro": "Pr", "color": "#7BDFD4",
                      "weight": 140.908},
-    "Neodymium": {"name": "Neodymium", "row": 8, "column": 4, "acro": "Nd", "color": "#7BDFD4", "weight": 144.24},
-    "Promethium": {"name": "Promethium", "row": 8, "column": 5, "acro": "Pm", "color": "#7BDFD4", "weight": 145},
-    "Samarium": {"name": "Samarium", "row": 8, "column": 6, "acro": "Sm", "color": "#7BDFD4", "weight": 150.36},
-    "Europium": {"name": "Europium", "row": 8, "column": 7, "acro": "Eu", "color": "#7BDFD4", "weight": 151.964},
-    "Gadolinium": {"name": "Gadolinium", "row": 8, "column": 8, "acro": "Gd", "color": "#7BDFD4", "weight": 157.25},
-    "Terbium": {"name": "Terbium", "row": 8, "column": 9, "acro": "Tb", "color": "#7BDFD4", "weight": 158.925},
-    "Dysprosium": {"name": "Dysprosium", "row": 8, "column": 10, "acro": "Dy", "color": "#7BDFD4", "weight": 162.5},
-    "Holmium": {"name": "Holmium", "row": 8, "column": 11, "acro": "Ho", "color": "#7BDFD4", "weight": 164.93},
-    "Erbium": {"name": "Erbium", "row": 8, "column": 12, "acro": "Er", "color": "#7BDFD4", "weight": 167.259},
-    "Thulium": {"name": "Thulium", "row": 8, "column": 13, "acro": "Tm", "color": "#7BDFD4", "weight": 168.934},
-    "Ytterbium": {"name": "Ytterbium", "row": 8, "column": 14, "acro": "Yb", "color": "#7BDFD4", "weight": 173.04},
-    "Lutetium": {"name": "Lutetium", "row": 8, "column": 15, "acro": "Lu", "color": "#7BDFD4", "weight": 174.967},
+    "Neodymium": {"name": "Neodymium", "row": 9, "column": 4, "acro": "Nd", "color": "#7BDFD4", "weight": 144.24},
+    "Promethium": {"name": "Promethium", "row": 9, "column": 5, "acro": "Pm", "color": "#7BDFD4", "weight": 145},
+    "Samarium": {"name": "Samarium", "row": 9, "column": 6, "acro": "Sm", "color": "#7BDFD4", "weight": 150.36},
+    "Europium": {"name": "Europium", "row": 9, "column": 7, "acro": "Eu", "color": "#7BDFD4", "weight": 151.964},
+    "Gadolinium": {"name": "Gadolinium", "row": 9, "column": 8, "acro": "Gd", "color": "#7BDFD4", "weight": 157.25},
+    "Terbium": {"name": "Terbium", "row": 9, "column": 9, "acro": "Tb", "color": "#7BDFD4", "weight": 158.925},
+    "Dysprosium": {"name": "Dysprosium", "row": 9, "column": 10, "acro": "Dy", "color": "#7BDFD4", "weight": 162.5},
+    "Holmium": {"name": "Holmium", "row": 9, "column": 11, "acro": "Ho", "color": "#7BDFD4", "weight": 164.93},
+    "Erbium": {"name": "Erbium", "row": 9, "column": 12, "acro": "Er", "color": "#7BDFD4", "weight": 167.259},
+    "Thulium": {"name": "Thulium", "row": 9, "column": 13, "acro": "Tm", "color": "#7BDFD4", "weight": 168.934},
+    "Ytterbium": {"name": "Ytterbium", "row": 9, "column": 14, "acro": "Yb", "color": "#7BDFD4", "weight": 173.04},
+    "Lutetium": {"name": "Lutetium", "row": 9, "column": 15, "acro": "Lu", "color": "#7BDFD4", "weight": 174.967},
     "Hafnium": {"name": "Hafnium", "row": 5, "column": 3, "acro": "Hf", "color": "#85B5F5", "weight": 178.49},
     "Tantalum": {"name": "Tantalum", "row": 5, "column": 4, "acro": "Ta", "color": "#85B5F5", "weight": 180.948},
     "Tungsten": {"name": "Tungsten", "row": 5, "column": 5, "acro": "W", "color": "#85B5F5", "weight": 183.84},
@@ -95,21 +96,21 @@ my_elements = {
     "Francium": {"name": "Francium", "row": 6, "column": 0, "acro": "Fr", "color": "#F2A8F1", "weight": 223},
     "Radium": {"name": "Radium", "row": 6, "column": 1, "acro": "Ra", "color": "#FA91BB", "weight": 226},
     "Actinium": {"name": "Actinium", "row": 6, "column": 2, "acro": "Ac", "color": "#8CFF9C", "weight": 227},
-    "Thorium": {"name": "Thorium", "row": 9, "column": 2, "acro": "Th", "color": "#8CFF9C", "weight": 232.038},
-    "Protactinium": {"name": "Protactinium", "row": 9, "column": 3, "acro": "Pa", "color": "#8CFF9C",
+    "Thorium": {"name": "Thorium", "row": 10, "column": 2, "acro": "Th", "color": "#8CFF9C", "weight": 232.038},
+    "Protactinium": {"name": "Protactinium", "row": 10, "column": 3, "acro": "Pa", "color": "#8CFF9C",
                      "weight": 231.036},
-    "Uranium": {"name": "Uranium", "row": 9, "column": 4, "acro": "U", "color": "#8CFF9C", "weight": 238.029},
-    "Neptunium": {"name": "Neptunium", "row": 9, "column": 5, "acro": "Np", "color": "#8CFF9C", "weight": 237},
-    "Plutonium": {"name": "Plutonium", "row": 9, "column": 6, "acro": "Pu", "color": "#8CFF9C", "weight": 244},
-    "Americium": {"name": "Americium", "row": 9, "column": 7, "acro": "Am", "color": "#8CFF9C", "weight": 243},
-    "Curium": {"name": "Curium", "row": 9, "column": 8, "acro": "Cm", "color": "#8CFF9C", "weight": 247},
-    "Berkelium": {"name": "Berkelium", "row": 9, "column": 9, "acro": "Bk", "color": "#8CFF9C", "weight": 247},
-    "Californium": {"name": "Californium", "row": 9, "column": 10, "acro": "Cf", "color": "#8CFF9C", "weight": 251},
-    "Einsteinium": {"name": "Einsteinium", "row": 9, "column": 11, "acro": "Es", "color": "#8CFF9C", "weight": 252},
-    "Fermium": {"name": "Fermium", "row": 9, "column": 12, "acro": "Fm", "color": "#8CFF9C", "weight": 257},
-    "Mendelevium": {"name": "Mendelevium", "row": 9, "column": 13, "acro": "Md", "color": "#8CFF9C", "weight": 258},
-    "Nobelium": {"name": "Nobelium", "row": 9, "column": 14, "acro": "No", "color": "#8CFF9C", "weight": 259},
-    "Lawrencium": {"name": "Lawrencium", "row": 9, "column": 15, "acro": "Lr", "color": "#8CFF9C", "weight": 262},
+    "Uranium": {"name": "Uranium", "row": 10, "column": 4, "acro": "U", "color": "#8CFF9C", "weight": 238.029},
+    "Neptunium": {"name": "Neptunium", "row": 10, "column": 5, "acro": "Np", "color": "#8CFF9C", "weight": 237},
+    "Plutonium": {"name": "Plutonium", "row": 10, "column": 6, "acro": "Pu", "color": "#8CFF9C", "weight": 244},
+    "Americium": {"name": "Americium", "row": 10, "column": 7, "acro": "Am", "color": "#8CFF9C", "weight": 243},
+    "Curium": {"name": "Curium", "row": 10, "column": 8, "acro": "Cm", "color": "#8CFF9C", "weight": 247},
+    "Berkelium": {"name": "Berkelium", "row": 10, "column": 9, "acro": "Bk", "color": "#8CFF9C", "weight": 247},
+    "Californium": {"name": "Californium", "row": 10, "column": 10, "acro": "Cf", "color": "#8CFF9C", "weight": 251},
+    "Einsteinium": {"name": "Einsteinium", "row": 10, "column": 11, "acro": "Es", "color": "#8CFF9C", "weight": 252},
+    "Fermium": {"name": "Fermium", "row": 10, "column": 12, "acro": "Fm", "color": "#8CFF9C", "weight": 257},
+    "Mendelevium": {"name": "Mendelevium", "row": 10, "column": 13, "acro": "Md", "color": "#8CFF9C", "weight": 258},
+    "Nobelium": {"name": "Nobelium", "row": 10, "column": 14, "acro": "No", "color": "#8CFF9C", "weight": 259},
+    "Lawrencium": {"name": "Lawrencium", "row": 10, "column": 15, "acro": "Lr", "color": "#8CFF9C", "weight": 262},
     "Rutherfordium": {"name": "Rutherfordium", "row": 6, "column": 3, "acro": "Rf", "color": "#85B5F5", "weight": 261},
     "Dubnium": {"name": "Dubnium", "row": 6, "column": 4, "acro": "Db", "color": "#85B5F5", "weight": 262},
     "Seaborgium": {"name": "Seaborgium", "row": 6, "column": 5, "acro": "Sg", "color": "#85B5F5", "weight": 266},
@@ -127,18 +128,62 @@ my_elements = {
     "Oganesson": {"name": "Oganesson", "row": 6, "column": 17, "acro": "Og", "color": "#FFF38C", "weight": 294}
 }
 
-root = tk.Tk()
+root = tix.Tk()
 root.title("PTChem")
-root.configure(bg='white')
+root.configure(bg="white")
+root.wm_attributes("-topmost", 0)
+main_window = tk.Frame(bg="white")
+main_window.grid(padx=0, pady=0, ipadx=5, ipady=5)
 
-main_window = tk.Frame(bg='white')
-main_window.grid(padx=25, pady=25, ipadx=5, ipady=5)
+header = tk.LabelFrame(main_window, text=" ", bg="white", bd=0)
+header.grid(row=0, column=1)
+p_table = tk.LabelFrame(main_window, text=" ", bg="white", bd=0)
+p_table.grid(row=1, column=1, padx=10, pady=10, ipadx=15, ipady=15)
+
+header_style = font.Font(family="helvetica", weight="bold", size=20)
+group_period_style = font.Font(family="helvetica", weight="bold", size=10)
+tooltip_style = font.Font(family="helvetica", weight="normal", size=8)
+
+for n in range(1, 19, 1):
+    _ = tk.LabelFrame(p_table, bd=0, bg="white")
+    _.grid(row=0, column=n)
+    _ = tk.Label(_, text=str(n), bg="white", height=2, font=group_period_style)
+    _.grid()
+
+for n in range(1, 8, 1):
+    _ = tk.LabelFrame(p_table, bd=0, bg="white")
+    _.grid(row=n, column=0, padx=5, pady=5)
+    _ = tk.Label(_, text=str(n), bg="white", width=5, font=group_period_style)
+    _.grid()
+
 for element in my_elements:
-    a = tk.LabelFrame(main_window, bg=my_elements[element]['color'], bd=3)
-    a.grid(row=my_elements[element]['row'], column=my_elements[element]['column'], sticky='nsew', padx=5, pady=5)
-    b = tk.Label(a, text=my_elements[element]['acro'], width=5, bg=my_elements[element]['color'])
+    mye = my_elements[element]
+    a = tk.LabelFrame(p_table, bg=mye['color'], bd=3)
+    a.grid(row=mye['row']+1, column=mye['column']+1, sticky='nsew', padx=5, pady=5)
+    b = tk.Label(a, text=mye['acro'], width=5, bg=mye['color'], font=group_period_style)
     b.grid(row=1, column=1, sticky='nsew')
-    b = tk.Label(a, text=round(my_elements[element]['weight']), width=5, bg='white')
+    b = tk.Label(a, text=round(mye['weight']), width=5, bg='white', font=1)
     b.grid(row=2, column=1, sticky='nsew')
+    bal = tix.Balloon(a)
+    par = my_elements[element]
+    ele_description = str(par['name']) + "\n" + str(par['weight'])
+    bal.bind_widget(a, balloonmsg=ele_description)
+
+
+def extra_labels(row, col, span, text, bg="white", loc=p_table, font=None):
+    _ = tk.LabelFrame(master=loc, bd=0, bg=bg)
+    _.grid(row=row, column=col, columnspan=span)
+    _ = tk.Label(_, text=text, bg=bg, justify="center", font=font)
+    _.grid()
+
+
+extra_labels(9, 1, 2, " ", font=group_period_style)
+extra_labels(10, 1, 2, "Lanthanides", font=group_period_style)
+extra_labels(11, 1, 2, "Actinides", font=group_period_style)
+extra_labels(3, 6, 3, "Transition Elements", font=group_period_style)
+extra_labels(0, 0, 1, "Group\n \nPeriod", font=group_period_style)
+extra_labels(0, 1, 1, "Periodic Table of the Elements", loc=header, font=header_style)
+extra_labels(1, 1, 1, "(Hover on element for more info)", loc=header, font=tooltip_style)
+
 
 root.mainloop()
